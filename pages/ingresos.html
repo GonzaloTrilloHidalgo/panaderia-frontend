@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Gastos e Ingresos</title>
+    <link rel="stylesheet" href="../css/ingresos.css"> <!-- Enlace a la hoja de estilos -->
+</head>
+
+<body>
+
+    <header>
+        <h1>Control de Gastos e Ingresos</h1>
+    </header>
+
+    <main>
+        <!-- Botón para volver al índice -->
+        <a href="../index.html" class="btn-volver">Volver al Inicio</a>
+
+        <!-- Formulario para registrar ingresos -->
+        <form id="formIngresos">
+            <input type="hidden" id="ingresoId">
+            <label for="descripcionIngreso">Descripción:</label>
+            <input type="text" id="descripcionIngreso" name="descripcion" required>
+
+            <label for="montoIngreso">Monto:</label>
+            <input type="number" id="montoIngreso" name="monto" step="0.01" required>
+
+            <label for="tipoIngreso">Tipo:</label>
+            <select id="tipoIngreso" name="tipo" required>
+                <option value="gasto">Gasto</option>
+                <option value="ingreso" selected>Ingreso</option> <!-- Valor por defecto será Ingreso -->
+            </select>
+
+            <label for="proveedorIngreso">Proveedor:</label>
+            <select id="proveedorIngreso">
+                <option value="">Selecciona un proveedor</option>
+            </select>
+
+            <button type="submit">Registrar Ingreso</button>
+        </form>
+
+        <form id="filtroMensual">
+            <label for="mes">Mes:</label>
+            <select id="mes" name="mes">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+
+            <label for="anio">Año:</label>
+            <input type="number" id="anio" name="anio" value="2025" required disabled>
+
+            <button type="submit">Filtrar</button>
+        </form>
+
+        <h2>Lista de Ingresos</h2>
+        <table id="ingresosTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                    <th>Tipo</th>
+                    <th>Proveedor</th>
+                    <th>Fecha Registro</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="ingresosList">
+                <!-- Aquí se agregarán los ingresos -->
+            </tbody>
+            <div id="totalIngresos">Total Ingresos: 0 €</div>
+        </table>
+
+        <div id="statusMessage"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Panadería</p>
+    </footer>
+
+    <script src="../js/ingresos.js"></script> <!-- Enlace a la lógica JS para ingresos -->
+</body>
+
+</html>

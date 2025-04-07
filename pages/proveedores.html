@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Proveedores</title>
+  <link rel="stylesheet" href="../css/proveedores.css"> <!-- Enlace a la hoja de estilos -->
+</head>
+<body>
+
+  <header>
+    <h1>Gestión de Proveedores</h1>
+  </header>
+
+  <main>
+    <!-- Botón para volver al índice -->
+    <a href="../index.html" class="btn-volver">Volver al Inicio</a>
+    <!-- Aquí irá el contenido específico de la gestión de proveedores, como el CRUD -->
+    <form id="formProveedor">
+      <input type="hidden" id="proveedorId">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" required>
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Guardar Proveedor</button>
+    </form>
+
+    <h2>Lista de Proveedores</h2>
+    <table id="proveedoresTable">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Dirección</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="proveedoresList">
+        <!-- Aquí se agregarán los proveedores -->
+      </tbody>
+    </table>
+
+    <div id="statusMessage"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Panadería</p>
+  </footer>
+
+  <script src="../js/app.js"></script> <!-- Enlace a la lógica JS -->
+</body>
+</html>
